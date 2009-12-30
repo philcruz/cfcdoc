@@ -1,0 +1,265 @@
+/* a, body, div, table, td 
+{ 
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}*/
+
+body
+{
+  background-color: #FFFFFF;
+  font-family: sans-serif;	
+  color: #000000;
+  margin: 8px 8px 8px 8px;
+  padding: 5px 5px 5px 5px;
+}
+
+.propertysummary table {
+	background-color: white;
+	font-family : sans-serif
+	border:solid #aaaaaa 1px; border-spacing: 0; border-collapse: collapse;
+	margin-top: 40px;
+}
+
+.propertysummary th{
+	background-color: #CCCCFF;
+	font-size: 16px;
+	padding: 5px; 
+	border:solid #aaaaaa 1px; border-spacing: 0; border-collapse: collapse;
+}
+
+.propertysummary td{ 
+	border: solid #aaaaaa 1px; 
+	padding: 4px; 
+}
+	
+.methodsummary table {
+	background-color: white;
+	font-family : sans-serif
+	border:solid #aaaaaa 1px; border-spacing: 0; border-collapse: collapse;
+	margin-top: 40px;
+}
+
+.methodsummary th{
+	background-color: #CCCCFF;
+	font-size: 16px;
+	padding: 5px; 
+	border:solid #aaaaaa 1px; border-spacing: 0; border-collapse: collapse;
+}
+
+.methodsummary td{ 
+	border: solid #aaaaaa 1px; 
+	padding: 4px; 
+	}
+	
+.methoddetail table {
+	background-color: white;
+	font-family : sans-serif
+	border:solid #aaaaaa 1px; border-spacing: 0; border-collapse: collapse;
+	margin-top: 10px;
+}
+
+.methoddetail th{
+	background-color: #CCCCFF;
+	font-size: 16px;
+	padding: 5px; 
+	border:solid #aaaaaa 1px; border-spacing: 0; border-collapse: collapse;
+}	
+
+.propertydetail table {
+	background-color: white;
+	font-family : sans-serif
+	border:solid #aaaaaa 1px; border-spacing: 0; border-collapse: collapse;
+	margin-top: 10px;
+}
+
+.propertydetail th{
+	background-color: #CCCCFF;
+	font-size: 16px;
+	padding: 5px; 
+	border:solid #aaaaaa 1px; border-spacing: 0; border-collapse: collapse;
+}	
+	
+.classname{
+	font-weight: bold;	
+	font-family : monospace;
+}	
+
+.inheritedpropertysummary table {
+	background-color: white;
+	font-family : monospace;
+	border-top:solid #aaaaaa 0px; 
+	border-left:solid #aaaaaa 1px; 
+	border-right:solid #aaaaaa 1px; 
+	border-bottom:solid #aaaaaa 1px; 
+	border-spacing: 0; 
+	border-collapse: collapse;
+}
+
+.inheritedpropertysummary th{
+	background-color: #eeeeff;
+	font-size: 12px;
+	font-weight: normal;
+	padding: 4px; 
+}
+
+.inheritedpropertysummary td{ 
+	border: solid #aaaaaa 1px; 
+	padding: 4px; 
+}
+
+/* if there are no properties, use this style so there is a border on top*/
+.inheritedpropertysummary2 table {
+	background-color: white;
+	font-family : monospace;
+	border-top:solid #aaaaaa 1px; 
+	border-left:solid #aaaaaa 1px; 
+	border-right:solid #aaaaaa 1px; 
+	border-bottom:solid #aaaaaa 1px; 
+	border-spacing: 0; 
+	border-collapse: collapse;
+}
+
+.inheritedpropertysummary2 th{
+	background-color: #eeeeff;
+	font-size: 12px;
+	font-weight: normal;
+	padding: 4px; 
+}
+
+.inheritedpropertysummary2 td{ 
+	border: solid #aaaaaa 1px; 
+	padding: 4px; 
+}
+
+.inheritedmethodsummary table {
+	background-color: white;
+	font-family : monospace;
+	border-top:solid #aaaaaa 0px; 
+	border-left:solid #aaaaaa 1px; 
+	border-right:solid #aaaaaa 1px; 
+	border-bottom:solid #aaaaaa 1px; 
+	border-spacing: 0; 
+	border-collapse: collapse;
+}
+
+.inheritedmethodsummary th{
+	background-color: #eeeeff;
+	font-size: 12px;
+	font-weight: normal;
+	padding: 4px; 
+}
+
+.inheritedmethodsummary td{ 
+	border: solid #aaaaaa 1px; 
+	padding: 4px; 
+}
+
+.inheritedmethodsummary {
+	/* margin-top: 20px; */
+}
+
+.propertytitle table{
+	background-color: white;
+	font-family : sans-serif
+	border:solid #aaaaaa 1px; border-spacing: 0; border-collapse: collapse;
+	margin-top: 10px;
+}
+.propertytitle th{
+	background-color: whitesmoke;
+	font-size: 16px;
+	padding: 5px; 
+	border:solid #aaaaaa 1px; border-spacing: 0; border-collapse: collapse;
+}
+.methodtitle table{
+	background-color: white;
+	font-family : sans-serif
+	border:solid #aaaaaa 1px; border-spacing: 0; border-collapse: collapse;
+	margin-top: 10px;
+}
+
+.methodtitle th{
+	background-color: whitesmoke;
+	font-size: 16px;
+	padding: 5px; 
+	border:solid #aaaaaa 1px; border-spacing: 0; border-collapse: collapse;
+}
+.methodname {
+	font-weight: bold;	
+	font-family : monospace;
+}
+
+.methodsignature{	
+	font-family : monospace;
+}
+
+.methodhint{
+	margin-left: 30px;
+	font-family: sans-serif; 
+	font-size:small;
+	font-weight: bold;
+}
+
+.parameters, .code{
+	margin-left: 30px;
+	font-family : monospace;
+}
+
+.codelabel, .parameterlabel{
+	font-family: sans-serif; 
+	font-size:small;
+	font-weight: bold;
+}
+
+.programlisting{
+	background-color: whitesmoke;
+	margin: 30px;
+}
+
+.hint table {
+	background-color: white;
+	font-family: sans-serif;	
+	padding: 4px; 
+	font-weight: bold;
+	/*border-top: solid #aaaaaa 2px; */
+	/*border-bottom: solid #aaaaaa 2px; */
+	margin-bottom: 10px;
+}
+
+.simplelist{
+	margin-left: 80px; 
+	font-family: monospace;	
+}
+
+#header{
+	clear: left;	
+	text-align : center;
+	padding: 2px;
+}
+
+#footer{
+	clear: left;	
+	text-align : center;
+	padding: 2px;
+	/*background: whitesmoke;*/
+	color: #666;
+	font-size: 11px; 
+	font-family: verdana,arial,helvetica,sans-serif; 
+	font-weight: 400;
+	/*border-top: 1px solid #ccc;*/
+	/*border-bottom: 1px solid #ccc;*/
+}
+
+.inheritsfromrole{
+		font-weight: bold;		
+		margin-left: 20px;
+}
+
+.inheritsfromtable inheritsfromrole{
+	margin-left: 20px;
+}
+
+.fileheadercomments{
+	white-space: pre;
+	font-weight: normal;
+	font-family : monospace;
+	background-color: whitesmoke;	
+}
