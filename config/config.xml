@@ -1,0 +1,19 @@
+<config>
+	<!-- Enter the license key you received when registering the softare or use the default evaluation key -->
+	<licensekey>CFCDOC-100-10006-0125-4054</licensekey>
+	
+	<!-- 
+		rootPathsList:
+		A list of directories to search for CFCs to be used to populate the "Select Folder" tree control
+		Default is blank
+		If blank, 
+			on Windows the root path will be set to root of the current drive letter
+			on OS X/Linux, the root path will be the root folder the application is installed under
+		Example usage:
+		<rootPathsList>c:\inetpub</rootPathsList>
+		<rootPathsList>c:\inetpub,d:\webapps,d:\some\other\folder</rootPathsList>
+		<rootPathsList>/Applications,/usr/home/jdoe</rootPathsList>
+	  -->
+	<rootPathsList></rootPathsList>
+
+</config>
