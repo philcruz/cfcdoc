@@ -1,7 +1,4 @@
-<config>
-	<!-- Enter the license key you received when registering the softare or use the default evaluation key -->
-	<licensekey>CFCDOC-100-10006-0125-4054</licensekey>
-	
+<config>	
 	<!-- 
 		rootPathsList:
 		A list of directories to search for CFCs to be used to populate the "Select Folder" tree control
