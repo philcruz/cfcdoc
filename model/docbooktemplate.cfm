@@ -119,7 +119,7 @@
 		<tbody>		
 		<cfif len(trim(stComponent.attributes.hint))>
 		<row>
-			<entry>#stComponent.attributes.hint#</entry>
+			<entry>#util.XmlSafeText(stComponent.attributes.hint)#</entry>
 		</row>	
 		</cfif>
 		<cfif lcase(attributes.parseHeaderMode) EQ "custom" AND len(trim(stComponent.attributes.fileHeader))>

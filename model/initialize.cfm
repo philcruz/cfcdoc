@@ -7,7 +7,7 @@
 
 	application.constructorNames = "init";
 	application.isWindowsPlatform = (server.os.name contains "windows");
-	application.licensekey = trim(configXML.config.licensekey.xmlText);
+	application.licensekey = "";
 	application.rootPathsList = trim(configXML.config.rootPathsList.xmlText);
 
 	if (not len(application.rootPathsList))	{
