@@ -1,6 +1,6 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   version="1.0">
-	<xsl:import href="../../docbook/htmlhelp/htmlhelp.xsl"/>  
+	<xsl:import href="../docbook/htmlhelp/htmlhelp.xsl"/>  
 	<xsl:param name="base.dir" select="'@htmlOutputDirectory@/'"/>
 	<xsl:param name="generate.legalnotice.link" select="0"/>
 	<xsl:param name="chunk.first.sections" select="1"/>
@@ -18,7 +18,7 @@
 	<xsl:param name="para.propagates.style" select="1" />
 	<xsl:param name="phrase.propagates.style" select="1" />
 	<xsl:param name="ulink.target" select="'_self'" />
-	<xsl:param name="use.id.as.filename" select="1" />
+	<xsl:param name="use.id.as.filename" select="0" />
 	<xsl:param name="generate.toc">
 	appendix  toc,title
 	article/appendix  nop
