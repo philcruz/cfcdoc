@@ -116,7 +116,7 @@
 			<CFDIRECTORY DIRECTORY="#arguments.directory#" NAME="fileList">	
 			<!--- delete files --->
 			<cfoutput query="fileList" >
-				<cfif type IS "dir">
+				<cfif lcase(type) IS "dir">
 					<cfset tempDir = "#arguments.directory#/#name#" />
 					<cfset this.deleteDirectory(tempDir) />
 				<cfelse>
@@ -130,13 +130,19 @@
 	
 	<cffunction name="createDirectory" returntype="void" output="false">
 		<cfargument name="directory" type="string" required="true" />
-		<cfdirectory action="CREATE" directory="#arguments.directory#" >
+		<cfif not directoryExists(arguments.directory) >
+			<cfdirectory action="CREATE" directory="#arguments.directory#" >
+		</cfif>
 	</cffunction>
 	
 	<cffunction name="refreshDirectory" returntype="void" output="false" hint="use to empty a directory">
 		<cfargument name="directory" type="string" required="true" />
 		<cfscript>
 			this.deleteDirectory(arguments.directory);
+			//getting some errors on create directory that directory already exists
+			//put in a delay to make sure the dir is completely deleted
+			var thread = CreateObject("java", "java.lang.Thread");
+			thread.sleep(500);
 			this.createDirectory(arguments.directory);
 		</cfscript>
 	</cffunction>
@@ -153,7 +159,7 @@
 		<!--- copy to any subdirectories --->
 		<CFDIRECTORY DIRECTORY="#arguments.destination#" NAME="fileList">	
 		<cfoutput query="fileList" >
-			<cfif type IS "dir">
+			<cfif lcase(type) IS "dir">
 				<cfset subDir = "#arguments.destination#/#name#" />
 				<cfset this.copyToDirectory(arguments.source,subDir) />				
 			</cfif>
@@ -232,6 +238,12 @@
 		
 		<cfreturn q3 />	
 	</cffunction>
+	
+	<!--- <cffunction name="zipFileNew" output="false" >
+		<cfargument name="zipPath" type="string" required="true" />
+		<cfargument name="toZip" type="string" required="true" />
+		<cfzip file="#arguments.zipPath#" source="#arguments.toZip#" />
+	</cffunction> --->
 	
 	<cffunction name="zipFileNew" returntype="string" output="false" >
 		<cfargument name="zipPath" type="string" required="true" />
@@ -385,7 +397,7 @@
 			<!--- dynamically set the root paths as all the directories off the root --->
 			<cfdirectory action="LIST" directory="/" name="rootFileList">	
 			<cfoutput query="rootFileList">
-				<cfif type IS "dir" >
+				<cfif lcase(type) IS "dir" >
 					<cfset searchDirList = listAppend(searchDirList,  "/" & name) /> 
 				</cfif>
 			</cfoutput>
@@ -474,7 +486,7 @@
 		<cfdirectory action="LIST" directory="#currentDirectory#" name="qry_dir" >
 		<!--- <cfdump var="#qry_dir#"> --->
 		<cfoutput query="qry_dir" maxrows="200">
-			<cfif type IS "dir" and this.containsComponents(currentDirectory & variables.directorySeparator & name) and not listFindNoCase(skipFolderList,  name) >
+			<cfif lcase(type) IS "dir" and this.containsComponents(currentDirectory & variables.directorySeparator & name) and not listFindNoCase(skipFolderList,  name) >
 				<cfset subdirid = this.getNextTreeID() />
 				<cfset queryAddRow(dtree,1) />
 				<cfset querySetCell(dtree,"id", subdirid ) />
@@ -504,7 +516,7 @@
 			<cfreturn true />
 		</cfif>
 		<cfoutput query="dirList">
-			<cfif type IS "dir">
+			<cfif lcase(type) IS "dir">
 				<cfif this.containsComponents(arguments.directoryPath & variables.directorySeparator & name) >
 					<cfreturn true />
 				</cfif>

@@ -21,9 +21,9 @@
 
 <!--- build up the inheritance hierarchy from bottom to top --->
 <cfscript>
-	temp = stComponent;
-	components = arrayNew(1);
-	s = structNew();
+	 temp = stComponent;
+	 components = arrayNew(1);
+	 s = structNew();
 	s.package = temp.package;
 	s.name = temp.name;
 	arrayPrepend(components, s);
@@ -68,7 +68,7 @@
 	</informaltable>
 </cfif>
 
-<cfif lcase(attributes.parseHeaderMode) EQ "javadoc">
+<cfif lcase(arguments.parseHeaderMode) EQ "javadoc">
 	<cfif isArray(stComponent.attributes.headerMetaData) and arrayLen(stComponent.attributes.headerMetaData)>		
 		<cfset headerMetaData = stComponent.attributes.headerMetaData[1] /> 
 	</cfif>
@@ -112,7 +112,7 @@
 </cfif>
 
 
-<cfif len(trim(stComponent.attributes.hint)) or ( lcase(attributes.parseHeaderMode) EQ "custom" AND len(trim(stComponent.attributes.fileHeader))) >
+<cfif len(trim(stComponent.attributes.hint)) or ( lcase(arguments.parseHeaderMode) EQ "custom" AND len(trim(stComponent.attributes.fileHeader))) >
 	<informaltable tabstyle="hint" frame="none" pgwide="1">
 	<tgroup cols="1" align="left" colsep="1" rowsep="1">
 		<colspec colname="c1" />
@@ -122,7 +122,7 @@
 			<entry>#util.XmlSafeText(stComponent.attributes.hint)#</entry>
 		</row>	
 		</cfif>
-		<cfif lcase(attributes.parseHeaderMode) EQ "custom" AND len(trim(stComponent.attributes.fileHeader))>
+		<cfif lcase(arguments.parseHeaderMode) EQ "custom" AND len(trim(stComponent.attributes.fileHeader))>
 		<row>
 			<entry><simpara role="fileheadercomments"><![CDATA[#stComponent.attributes.fileHeader# ]]></simpara></entry>			
 		</row>	
@@ -247,7 +247,7 @@
 			<ulink url="#util.getDetailURL(thisMethod.returntype,stComponent.path)#" >#listLast(thisMethod.returnType, ".")#</ulink>
 		</entry>
 		<entry>
-			<ulink url="###thismethod.name#">#thismethod.name#</ulink>(#generateArgumentList(thisMethod)#)				
+			<ulink url="###thismethod.name#">#thismethod.name#</ulink>(#this.generateArgumentList(thisMethod)#)				
 			<cfif len(trim(thisMethod.hint))>
 			<para>
 				#thisMethod.hint#
@@ -264,7 +264,7 @@
 		<ulink url="#util.getDetailURL(thisMethod.returntype,stComponent.path)#" >#listLast(thisMethod.returnType, ".")#</ulink>
 	</entry>
 	<entry>
-		<ulink url="###thismethod.name#">#thismethod.name#</ulink>(#generateArgumentList(thisMethod)#)				
+		<ulink url="###thismethod.name#">#thismethod.name#</ulink>(#this.generateArgumentList(thisMethod)#)				
 		<cfif len(trim(thisMethod.hint))>
 			<para>
 				#thisMethod.hint#
