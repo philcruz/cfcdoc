@@ -1,0 +1,3 @@
+# About #
+
+In 2004, Spike Mulligan created a utility to generate Javadoc-style documentation from ColdFusion components and released it under a Common Public License. Seeing the need for a tool that could generate static documentation, I modified Spike's code to be able to generate static docs in html and PDF formats. CFC.Doc was a closed source project but is now released as open source (Jan 2010).
